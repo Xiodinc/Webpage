@@ -1,17 +1,14 @@
-// Add any JavaScript functionality you want here
-document.addEventListener("DOMContentLoaded", function() {
-  console.log("Hello, world!");
-  animateProjects();
-});
+document.addEventListener('DOMContentLoaded', function() {
+  var servicesList = document.getElementById('services-list');
+  var listItems = servicesList.getElementsByTagName('li');
 
-function animateProjects() {
-  var projects = document.querySelectorAll("#projects-list li");
-  projects.forEach(function(project, index) {
-    project.style.opacity = "0";
-    project.style.transform = "translateY(20px)";
-    setTimeout(function() {
-      project.style.opacity = "1";
-      project.style.transform = "translateY(0)";
-    }, index * 200);
-  });
-}
+  for (var i = 0; i < listItems.length; i++) {
+    listItems[i].addEventListener('mouseover', function() {
+      this.classList.add('highlighted');
+    });
+
+    listItems[i].addEventListener('mouseout', function() {
+      this.classList.remove('highlighted');
+    });
+  }
+});
