@@ -1,3 +1,4 @@
+/* Customize the styles according to your preferences */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -17,6 +18,8 @@ h1 {
 }
 
 main {
+  display: grid;
+  place-items: center;
   text-align: center;
 }
 
@@ -27,8 +30,12 @@ p {
 ul {
   list-style-type: disc;
   color: #999;
-  margin: 0 auto;
   max-width: 300px;
+  padding: 0;
+  display: grid;
+  grid-gap: 10px;
+  justify-content: center;
+  align-content: start;
 }
 
 li {
