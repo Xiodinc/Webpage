@@ -56,3 +56,11 @@ footer {
   padding: 10px;
   text-align: center;
 }
+
+/* Additional styles for the animated list */
+.highlighted {
+  background-color: #ffddc1;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
