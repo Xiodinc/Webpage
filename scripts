@@ -1,1 +1,17 @@
-console.log("Hello, world!");
+// Add any JavaScript functionality you want here
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("Hello, world!");
+  animateProjects();
+});
+
+function animateProjects() {
+  var projects = document.querySelectorAll("#projects-list li");
+  projects.forEach(function(project, index) {
+    project.style.opacity = "0";
+    project.style.transform = "translateY(20px)";
+    setTimeout(function() {
+      project.style.opacity = "1";
+      project.style.transform = "translateY(0)";
+    }, index * 200);
+  });
+}
