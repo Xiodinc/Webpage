@@ -1,44 +1,58 @@
-/* Customize the styles according to your preferences */
+/* Reset some default styles */
+body, h1, h2, ul, li, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
 }
 
 header {
-  background-color: #333;
+  background-color: #f2f2f2;
   padding: 20px;
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 h1 {
-  color: #fff;
-  margin: 0;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-main {
-  display: grid;
-  place-items: center;
-  text-align: center;
+nav ul {
+  list-style-type: none;
 }
 
-p {
-  color: #666;
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+section {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 ul {
   list-style-type: disc;
-  color: #999;
-  max-width: 300px;
-  padding: 0;
-  display: grid;
-  grid-gap: 10px;
-  justify-content: center;
-  align-content: start;
+  margin-left: 20px;
 }
 
-li {
-  padding: 5px 0;
-  text-align: left;
+footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
 }
