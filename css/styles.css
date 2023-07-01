@@ -2,10 +2,13 @@
 body, h1, h2, ul, li, p {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 /* Global styles */
 body {
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -13,7 +16,7 @@ body {
 }
 
 header {
-  background-color: #f2f2f2;
+  background-color: #333;
   padding: 20px;
 }
 
@@ -24,6 +27,8 @@ h1 {
 
 nav ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
@@ -33,13 +38,40 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
 }
 
 section {
-  padding: 20px;
+  padding: 40px;
+  text-align: center;
   margin-bottom: 30px;
 }
+#home {
+  background-color: #f2f2f2;
+}
+
+#about {
+  background-color: #e6e6e6;
+}
+
+#services {
+  background-color: #d9d9d9;
+}
+
+#contact {
+  background-color: #cccccc;
+}
+
+@media (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main";
+    height: 100vh;
+  }
 
 h2 {
   font-size: 24px;
@@ -50,7 +82,14 @@ ul {
   list-style-type: disc;
   margin-left: 20px;
 }
+  
+header {
+    grid-area: header;
+  }
 
+  section {
+    grid-area: main;
+  }
 footer {
   background-color: #f2f2f2;
   padding: 10px;
