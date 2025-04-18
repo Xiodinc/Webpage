@@ -14,9 +14,13 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: #333; /* Header background color */
   padding: 20px;
-  color: #e6e6e6;
+  color: #fff; /* Header text color */
+}
+
+h1, h2 {
+  color: #fff; /* Make all headers white */
 }
 
 h1 {
@@ -41,28 +45,30 @@ nav ul li a {
   color: #fff;
 }
 
-/* Section styles with background colors */
+/* Section styles with consistent background colors */
 section {
   padding: 40px;
   margin-bottom: 30px;
   text-align: center;
+  background-color: #333; /* Consistent background for all sections */
+  color: #fff; /* White text for consistency */
   border-radius: 8px;
 }
 
 #home {
-  background-color: #f2f2f2;
+  background-color: #333; /* Home section background color */
 }
 
 #about {
-  background-color: #e6e6e6;
+  background-color: #333; /* About section background color */
 }
 
 #services {
-  background-color: #d9d9d9;
+  background-color: #333; /* Services section background color */
 }
 
 #contact {
-  background-color: #cccccc;
+  background-color: #333; /* Contact section background color */
 }
 
 /* Lists inside content */
@@ -74,10 +80,10 @@ ul {
 
 /* Footer styles */
 footer {
-  background-color: #f2f2f2;
+  background-color: #333; /* Footer background color */
   padding: 10px;
   text-align: center;
-  color: #666;
+  color: #fff; /* White text in the footer */
 }
 
 /* Highlight class (optional feature) */
