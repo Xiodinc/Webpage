@@ -43,6 +43,14 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: #fff; /* White text for navigation links */
+  padding: 10px 15px; /* Add some padding for clickable area */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for navigation links */
+nav ul li a:hover {
+  background-color: #ffcc00; /* Highlight color on hover (yellow) */
+  color: #800000; /* Change text color to maroon on hover */
 }
 
 /* Section styles with consistent background colors */
