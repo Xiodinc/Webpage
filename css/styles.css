@@ -14,9 +14,9 @@ body {
 }
 
 header {
-  background-color: #f2f2f2;
+  background-color: #333;
   padding: 20px;
-  color: white;
+  color: #e6e6e6;
 }
 
 h1 {
