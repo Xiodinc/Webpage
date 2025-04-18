@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  background-color: #222; /* Darker background color for header */
+  background-color: #800000; /* Maroon background for header */
   padding: 20px;
   color: #fff; /* White text */
 }
@@ -42,7 +42,7 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #fff; /* White text for navigation links */
 }
 
 /* Section styles with consistent background colors */
@@ -80,7 +80,7 @@ ul {
 
 /* Footer styles */
 footer {
-  background-color: #333; /* Footer background color */
+  background-color: #800000; /* Maroon background for footer */
   padding: 10px;
   text-align: center;
   color: #fff; /* White text in the footer */
@@ -101,3 +101,20 @@ footer {
     grid-template-columns: 1fr;
     grid-template-areas:
       "header"
+      "main"
+      "footer";
+    height: 100vh;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  section {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+}
