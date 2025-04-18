@@ -1,23 +1,22 @@
-/* Reset some default styles */
+/* Reset and global styles */
 body, h1, h2, ul, li, p {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 }
 
-/* Global styles */
+/* Base styles */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
+  background-color: #f8f8f8;
 }
 
 header {
   background-color: #333;
   padding: 20px;
+  color: white;
 }
 
 h1 {
@@ -25,15 +24,16 @@ h1 {
   margin-bottom: 10px;
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-nav ul li {
-  display: inline-block;
-  margin-right: 10px;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
 }
 
 nav ul li a {
@@ -41,11 +41,14 @@ nav ul li a {
   color: #fff;
 }
 
+/* Section styles with background colors */
 section {
   padding: 40px;
-  text-align: center;
   margin-bottom: 30px;
+  text-align: center;
+  border-radius: 8px;
 }
+
 #home {
   background-color: #f2f2f2;
 }
@@ -62,45 +65,50 @@ section {
   background-color: #cccccc;
 }
 
-@media (min-width: 768px) {
-  body {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "main";
-    height: 100vh;
-  }
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
+/* Lists inside content */
 ul {
   list-style-type: disc;
   margin-left: 20px;
+  text-align: left;
 }
-  
-header {
-    grid-area: header;
-  }
 
-  section {
-    grid-area: main;
-  }
+/* Footer styles */
 footer {
   background-color: #f2f2f2;
   padding: 10px;
   text-align: center;
+  color: #666;
 }
 
-/* Additional styles for the animated list */
+/* Highlight class (optional feature) */
 .highlighted {
   background-color: #ffddc1;
   color: #333;
   transition: background-color 0.3s ease;
 }
 
+/* Responsive layout improvements */
+@media (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    height: 100vh;
+  }
 
+  header {
+    grid-area: header;
+  }
+
+  section {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+}
