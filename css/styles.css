@@ -14,9 +14,9 @@ body {
 }
 
 header {
-  background-color: #333; /* Header background color */
+  background-color: #222; /* Darker background color for header */
   padding: 20px;
-  color: #fff; /* Header text color */
+  color: #fff; /* White text */
 }
 
 h1, h2 {
@@ -51,7 +51,7 @@ section {
   margin-bottom: 30px;
   text-align: center;
   background-color: #333; /* Consistent background for all sections */
-  color: #fff; /* White text for consistency */
+  color: #fff; /* White text */
   border-radius: 8px;
 }
 
@@ -101,20 +101,3 @@ footer {
     grid-template-columns: 1fr;
     grid-template-areas:
       "header"
-      "main"
-      "footer";
-    height: 100vh;
-  }
-
-  header {
-    grid-area: header;
-  }
-
-  section {
-    grid-area: main;
-  }
-
-  footer {
-    grid-area: footer;
-  }
-}
