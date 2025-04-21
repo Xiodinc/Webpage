@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var servicesList = document.getElementById('services-list');
-  var listItems = servicesList.getElementsByTagName('li');
+  const servicesList = document.getElementById('services-list');
+  const listItems = servicesList.getElementsByTagName('li');
+  const title = document.getElementById('title');
+  const subtitle = document.getElementById('subtitle');
+  const clickSound = document.getElementById('click-sound');
 
-  for (var i = 0; i < listItems.length; i++) {
+  // Highlight on hover
+  for (let i = 0; i < listItems.length; i++) {
     listItems[i].addEventListener('mouseover', function() {
       this.classList.add('highlighted');
     });
@@ -10,5 +14,37 @@ document.addEventListener('DOMContentLoaded', function() {
     listItems[i].addEventListener('mouseout', function() {
       this.classList.remove('highlighted');
     });
+
+    listItems[i].addEventListener('click', function() {
+      clickSound.play();
+    });
+
+    // Fade-in effect
+    setTimeout(() => {
+      listItems[i].style.opacity = 1;
+    }, 300 * i);
   }
+
+  // Typewriter effect
+  function typeWriter(el, text, speed = 100) {
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        el.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+    type();
+  }
+
+  typeWriter(title, "Explore Our Awesome Services!");
+
+  // Color cycling
+  const colors = ['red', 'blue', 'green', 'purple', 'orange'];
+  let colorIndex = 0;
+  setInterval(() => {
+    subtitle.style.color = colors[colorIndex % colors.length];
+    colorIndex++;
+  }, 400);
 });
