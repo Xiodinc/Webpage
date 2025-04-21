@@ -4,10 +4,36 @@
   <meta charset="UTF-8">
   <title>Services | My Website</title>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    #title {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    #subtitle {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    #services-list li {
+      list-style: none;
+      padding: 10px;
+      background: #fff;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    #services-list li.highlighted {
+      background-color: yellow;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Services</h1>
+    <h1>Our Services</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -18,17 +44,71 @@
     </nav>
   </header>
 
-  <section id="services">
-    <h2>What I Do</h2>
-    <ul>
-      <li>Web Design</li>
-      <li>Graphic Design</li>
-      <li>Mobile App Development</li>
+  <section>
+    <div id="title"></div>
+    <div id="subtitle">Hover to Highlight</div>
+
+    <ul id="services-list">
+      <li>Web Hosting</li>
+      <li>Domain Registration</li>
+      <li>SEO Optimization</li>
+      <li>Support Services</li>
     </ul>
+
+    <audio id="click-sound" src="click.mp3" preload="auto"></audio>
   </section>
 
   <footer>
     <p>&copy; 2023 My Website. All rights reserved.</p>
   </footer>
-</body>
-</html>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const servicesList = document.getElementById('services-list');
+      const listItems = servicesList.getElementsByTagName('li');
+      const title = document.getElementById('title');
+      const subtitle = document.getElementById('subtitle');
+      const clickSound = document.getElementById('click-sound');
+
+      // Highlight on hover
+      for (let i = 0; i < listItems.length; i++) {
+        listItems[i].addEventListener('mouseover', function() {
+          this.classList.add('highlighted');
+        });
+
+        listItems[i].addEventListener('mouseout', function() {
+          this.classList.remove('highlighted');
+        });
+
+        listItems[i].addEventListener('click', function() {
+          clickSound.play();
+        });
+
+        // Fade-in effect
+        setTimeout(() => {
+          listItems[i].style.opacity = 1;
+        }, 300 * i);
+      }
+
+      // Typewriter effect
+      function typeWriter(el, text, speed = 100) {
+        let i = 0;
+        function type() {
+          if (i < text.length) {
+            el.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          }
+        }
+        type();
+      }
+
+      typeWriter(title, "Explore Our Awesome Services!");
+
+      // Color cycling
+      const colors = ['red', 'blue', 'green', 'purple', 'orange'];
+      let colorIndex = 0;
+      setInterval(() => {
+        subtitle.style.color = colors[colorIndex % colors.length];
+        colorIndex++;
+      },
